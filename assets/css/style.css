@@ -1,0 +1,199 @@
+/* assets/css/style.css */
+
+body {
+    font-family: sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    direction: rtl;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* --- Exam Page Specific --- */
+.exam-container {}
+
+.exam-header {
+    background-color: #4a148c;
+    color: white;
+    padding: 10px 20px;
+    margin: -20px -20px 20px -20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.exam-header h2, .exam-header h3 { margin: 5px 0; font-weight: normal; }
+.exam-header h3 { font-size: 0.9em; opacity: 0.9; }
+
+.question-area {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    direction: ltr; /* Important for Dutch text */
+    text-align: left; /* Important for Dutch text */
+}
+.question-area p,
+.question-area strong,
+.question-area label, /* Style labels */
+.question-area div {
+    direction: ltr;
+    text-align: left;
+    margin-bottom: 1em;
+}
+
+/* Inputs */
+.question-area textarea,
+.question-area input[type="text"],
+.question-area input[type="date"],
+.question-area input[type="tel"],
+.question-area input[type="email"] {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    margin-top: 5px; /* Reduced margin */
+    margin-bottom: 10px; /* Added bottom margin */
+    min-height: 30px; /* Adjust min-height for inputs */
+    direction: ltr;
+    text-align: left;
+    box-sizing: border-box; /* Include padding in width */
+}
+.question-area textarea {
+    min-height: 100px;
+}
+.question-area label { /* Make labels more distinct */
+    display: block; /* Ensure label is on its own line */
+    margin-bottom: 3px; /* Space between label and input */
+    font-weight: bold;
+    color: #333;
+}
+.question-area form br { /* Remove default form breaks if not needed */
+   display: none;
+}
+
+
+/* Translateable words */
+.translateable {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    color: #0056b3;
+    font-weight: bold;
+}
+
+/* Translation popup */
+#translation-popup {
+    position: absolute;
+    background-color: #ffffe0;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: none;
+    z-index: 1000;
+    font-size: 0.9em;
+    color: #333;
+    max-width: 200px;
+    direction: rtl;
+    text-align: right;
+}
+
+/* Feedback area */
+.feedback-section,
+.feedback-section-result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e7f3fe;
+    border: 1px solid #bde0fe;
+    border-radius: 5px;
+    direction: rtl;
+    text-align: right;
+}
+.feedback-section h4 { margin-top: 0; color: #03539e; border-bottom: 1px solid #bde0fe; padding-bottom: 5px; }
+#feedback-text,
+.feedback-text-result { white-space: pre-wrap; word-wrap: break-word; }
+
+
+/* Buttons */
+button, .nav-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 5px;
+    transition: background-color 0.2s ease;
+    text-decoration: none; /* For <a> tags styled as buttons */
+    display: inline-block; /* For <a> tags */
+    color: white; /* Default text color for buttons */
+    background-color: #007bff; /* Default blue */
+    vertical-align: middle; /* Align buttons nicely */
+}
+button:disabled, .nav-btn.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #6c757d;
+}
+button:hover:not(:disabled), .nav-btn:hover:not(.disabled) {
+    opacity: 0.9;
+}
+
+/* Specific Button Colors */
+#check-answer-btn { background-color: #28a745; } /* Green */
+#check-answer-btn:hover:not(:disabled) { background-color: #218838; }
+
+.next-btn { background-color: #007bff; } /* Blue */
+.next-btn:hover:not(.disabled) { background-color: #0056b3; }
+
+.prev-btn { background-color: #6c757d; } /* Grey */
+.prev-btn:hover:not(.disabled) { background-color: #5a6268; }
+
+.finish-btn { background-color: #dc3545; } /* Red */
+.finish-btn:hover:not(.disabled) { background-color: #c82333; }
+
+.reset-btn { background-color: #ffc107; color: #333; } /* Yellow */
+.reset-btn:hover:not(.disabled) { background-color: #e0a800; }
+
+/* Button positioning */
+.action-buttons {
+   margin-bottom: 20px;
+   min-height: 40px; /* Ensure space even if button is hidden */
+}
+.navigation-buttons {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Loading spinner */
+.loading-spinner {
+    display: inline-block;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+    vertical-align: middle;
+    display: none; /* Hidden by default */
+}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
